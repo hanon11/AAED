@@ -1,1 +1,1 @@
-#prácticas informáticas de AAED
+prácticas informáticas de AAED
