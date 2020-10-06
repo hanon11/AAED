@@ -21,7 +21,5 @@ int main(){
 }
 
 int numeroRandom (int a, int b){
-    int num;
-    num =  rand() % (b - a + 1) + a;
-    return num;
+    return rand() % (b - a + 1) + a;
 }
