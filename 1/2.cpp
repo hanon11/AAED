@@ -16,7 +16,7 @@ int main(){
     }
 
     for (int j = 0; j < 6; j++){
-        cout << (float) vector[j] / 10000000 << endl;
+        cout << "La frecuencia realtiva de " << j+1 << " es " << (float) vector[j] / 10000000 << endl;
     }
 }
 
