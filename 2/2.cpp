@@ -17,8 +17,8 @@ int main(){
         for (int j = 0; j < i; j++){
             vector[j] = j+1;
         }
+        random_shuffle(vector,vector + sizeof vector/sizeof *vector);
         ordenacion(seleccion,vector, i);
-        
     }
 }
 
