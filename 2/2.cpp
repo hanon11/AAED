@@ -2,27 +2,37 @@
 #include "1.h"
 #include <algorithm>
 using namespace std;
-
-void ordenacion(int seleccion, int vector[], int i);
+//escoge el algoritmo de ordenacion y devuelve 1 en caso de ordenar bien el vector
+int ordenacion(int seleccion, int vector[], int i);
+//si el vector se encuentra ordenado devuelve verdadero
+bool ordenado(int vect[], int tamaño);
 
 int main(){
-    int seleccion;
+    int seleccion, permutacionesOrdenadas = 0;
     do{
         cout << "1. Intercambio directo\n2. Seleccion directa\n3. Inserccion directa." << endl;
         cin >> seleccion;
     }while (seleccion < 1 || seleccion > 3);
 
     for (int i = 1; i < 10; i++){
-        int vector[i];
-        for (int j = 0; j < i; j++){
+        permutacionesOrdenadas = 0;
+        int vector[i], permutaciones = 1;
+        for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a i
             vector[j] = j+1;
+            permutaciones *= (j+1); //calculo el numero de posibles combinaciones del vector (i!)
         }
-        random_shuffle(vector,vector + sizeof vector/sizeof *vector);
-        ordenacion(seleccion, vector, i);
+        cout << "Número de posibles permutaciones: " << permutaciones << endl; 
+        for (int k = 0; k < permutaciones; k++){   
+            random_shuffle(vector,vector + sizeof vector/sizeof *vector);
+            permutacionesOrdenadas += ordenacion(seleccion, vector, i);
+        }
+        cout << "Número de permutaciones ordenadas: " << permutacionesOrdenadas << endl;
     }
+
 }
 
-void ordenacion(int seleccion, int vector[], int i){
+int ordenacion(int seleccion, int vector[], int i){
+    int contador = 0;
     switch (seleccion)
         {
         case 1:
@@ -37,10 +47,18 @@ void ordenacion(int seleccion, int vector[], int i){
         default:
             break;
         }
-        cout << "Ordenacion numero " << i << endl;
-        for(int k = 0; k < i; k++){
-            cout << vector[k] << " ";
-        }
-        cout << endl;
+        if (ordenado(vector, i-1))
+            contador = 1;
 
+    return contador;
+}
+
+bool ordenado(int vect[], int tamaño){
+    bool respuesta = true;
+    for (int i = 0; i < tamaño && respuesta; i++){
+        if (vect[i] > vect[i+1]){
+            respuesta = false;
+        }
+    }
+    return respuesta;
 }
