@@ -36,13 +36,13 @@ int ordenacion(int seleccion, int vector[], int i){
     switch (seleccion)
         {
         case 1:
-            ordenacion_intercambio(&vector[0], &vector[i]);
+            ordenacion_intercambio(vector, vector+i);
             break;
         case 2: 
-            ordenacion_seleccion(&vector[0], &vector[i]);
+            ordenacion_seleccion(vector, vector+i);
             break;
         case 3: 
-            ordenacion_insercion(&vector[0], &vector[i]);
+            ordenacion_insercion(vector, vector+i);
             break;
         default:
             break;
