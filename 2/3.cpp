@@ -19,6 +19,7 @@ int main(){
         for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a i
             vector[j] = j+1;
         }
+        random_shuffle(vector,vector + sizeof vector/sizeof *vector);
         crono.activar();
         ordenacion(seleccion, vector, i);
         crono.parar();
