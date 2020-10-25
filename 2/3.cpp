@@ -8,24 +8,25 @@ void ordenacion(int seleccion, int vector[], int i);
 
 int main(){
     cronometro crono;
-    int seleccion, i = 1000;
+    int seleccion, i = 20000, k = 1000;
+    int vector[20000];
+    for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a i
+        vector[j] = j+1;
+    }
+
     do{
         cout << "1. Intercambio directo\n2. Seleccion directa\n3. Inserccion directa." << endl;
         cin >> seleccion;
     }while (seleccion < 1 || seleccion > 3);
 
-    while (i <= 20000){
-        int vector[i];
-        for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a i
-            vector[j] = j+1;
-        }
+    while (k <= 20000){
         random_shuffle(vector,vector + sizeof vector/sizeof *vector);
         crono.activar();
-        ordenacion(seleccion, vector, i);
+        ordenacion(seleccion, vector, k);
         crono.parar();
         double tiempo = crono.tiempo();
-        cout << "El tiempo para ordenar " << i << " elementos es: " << tiempo << endl;
-        i += 1000;
+        cout << "El tiempo para ordenar " << k << " elementos es: " << tiempo << endl;
+        k += 1000;
     }
 
 }
