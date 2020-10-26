@@ -7,6 +7,7 @@ using namespace std;
 void ordenacion(int seleccion, int vector[], int i);
 
 int main(){
+    srand(time(NULL));
     cronometro crono;
     int seleccion, i = 20000, k = 1000;
     int vector[20000];
