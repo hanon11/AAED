@@ -10,7 +10,7 @@ int main(){
     cronometro crono;
     int seleccion, i = 20000, k = 1000;
     int vector[20000];
-    for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a i
+    for (int j = 0; j < i; j++){ //relleno el vector con numeros del 1 a 20000
         vector[j] = j+1;
     }
 
@@ -28,7 +28,6 @@ int main(){
         cout << "El tiempo para ordenar " << k << " elementos es: " << tiempo << endl;
         k += 1000;
     }
-
 }
 
 void ordenacion(int seleccion, int vector[], int i){
