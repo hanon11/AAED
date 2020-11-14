@@ -1,9 +1,7 @@
 #include <iostream>
-#include "polinom.h"
+#include "miPolinom.h"
 #include "operaciones.h"
 using namespace std;
-
-polinomio crea();
 
 int main(){
     bool booleano = true;
@@ -50,31 +48,9 @@ int main(){
             default:
                 break;
         }
-        for (int i = c.grado(); i >= 0; i--){
-            if (i == 0){
-                cout << c.coeficiente(i) << endl;
-                
-            }else if (i == 1)
-                cout << c.coeficiente(i) << "x" << " + ";
-            else cout << c.coeficiente(i) << "x^" << i << " + ";
-        }
+        if (op != 0)
+            imprime(c);
     }while(op != 0);
 
 }
 
-
-polinomio crea(){
-    int grado, coef;
-    cout << "¿De qué grado va a ser tu polinomio?" << endl;
-    cin >> grado;
-    polinomio pol(grado);
-    fflush(stdin);
-    for (int i = grado; i >= 0; i--){
-        cout << "Ingresa el coeficiente correspondiente a x^" << i << ": ";
-        cin >> coef;
-        pol.coeficiente(i, coef);
-        cout << endl;
-    }
-
-    return pol;
-}

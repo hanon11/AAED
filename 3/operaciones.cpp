@@ -1,6 +1,5 @@
 #include "operaciones.h"
 
-
 polinomio operator+(const polinomio a, const polinomio b){
     int gradoMaximo;
     if (a.grado() >= b.grado()){ //calculo el grado maximo de ambos polinomios
@@ -49,4 +48,33 @@ polinomio derivada(const polinomio a){
         c.coeficiente(i, a.coeficiente(i + 1) * (i + 1));
     }
     return c;
+}
+
+
+polinomio crea(){
+    int grado, coef;
+    cout << "¿De qué grado va a ser tu polinomio?" << endl;
+    cin >> grado;
+    polinomio pol(grado);
+    for (int i = grado; i >= 0; i--){
+        cout << "Ingresa el coeficiente correspondiente a x^" << i << ": ";
+        cin >> coef;
+        pol.coeficiente(i, coef);
+        cout << endl;
+    }
+
+    return pol;
+}
+void imprime(const polinomio c){
+    for (int i = c.grado(); i >= 0; i--){
+        if (c.coeficiente(i) >= 0 && i != c.grado())
+            cout << " + ";
+        if (i == 0){
+            cout << c.coeficiente(i) << endl;
+                
+        }else if (i == 1){
+            cout << c.coeficiente(i) << "x ";
+
+        }else cout << c.coeficiente(i) << "x^" << i << " ";
+    }
 }

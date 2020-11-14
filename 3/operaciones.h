@@ -1,6 +1,8 @@
 #ifndef OPERACIONES
 #define OPERACIONES
-#include "polinom.h"
+#include "miPolinom.h"
+#include <iostream>
+using namespace std;
 
 //cabecera: polinomio operator+(const polinomio &a, const polinomio &b)
 //precondicion: polinomios inicializados
@@ -22,6 +24,12 @@ polinomio operator*(const polinomio a, const polinomio b);
 //precondicion: polinomio inicializado
 //postcondicion: devuelve la derivada del polinomio
 polinomio derivada(const polinomio a);
+
+
+
+polinomio crea();
+
+void imprime(const polinomio c);
 
 
 #endif
