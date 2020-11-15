@@ -1,7 +1,7 @@
 #include "miPolinom.h"
 polinomio::polinomio(unsigned gradoMax){
     vector = new double[gradoMax];
-    for(int i = 0; i < gradoMax; ++i){
+    for(int i = 0; i <= gradoMax; i++){
         vector[i] = 0;
     }
     gradMax = gradoMax;
