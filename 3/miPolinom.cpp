@@ -4,19 +4,23 @@ polinomio::polinomio(unsigned gradoMax){
     for(int i = 0; i <= gradoMax; i++){
         vector[i] = 0;
     }
-    gradMax = gradoMax;
+    grad_max = gradoMax;
+    grad_pol = 0;
 }
 
 unsigned polinomio::grado() const {
-    return gradMax;
+    return grad_pol;
 }
 
 double polinomio::coeficiente(unsigned n) const{
-    if (n > gradMax){
+    if (n > grad_max){
         return 0;
     }else return vector[n];
 }
 
 void polinomio::coeficiente(unsigned n, double c){
+    if(n > grad_max){
+        grad_max = n;
+    }
     vector[n] = c;
 }
