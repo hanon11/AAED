@@ -19,5 +19,4 @@ double polinomio::coeficiente(unsigned n) const{
 
 void polinomio::coeficiente(unsigned n, double c){
     vector[n] = c;
-
 }

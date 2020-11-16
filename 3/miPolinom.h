@@ -12,7 +12,6 @@ class polinomio{
     private:
     double* vector;
     unsigned gradMax;
-    unsigned gradop;
 };
 
 #endif
