@@ -19,8 +19,8 @@ double polinomio::coeficiente(unsigned n) const{
 }
 
 void polinomio::coeficiente(unsigned n, double c){
-    if(n > grad_max){
-        grad_max = n;
+    if(n > grad_pol){
+        grad_pol = n;
     }
     vector[n] = c;
 }
