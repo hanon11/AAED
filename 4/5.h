@@ -21,7 +21,6 @@ private:
 };
 
 
-
 inline void Cursor::avanzar(){
     if(!der.vacia()){
         izq.push(der.tope());
@@ -76,6 +75,5 @@ inline void Cursor::insertar(char& x){
         der.push(x);
     }
 }
-
 
 #endif

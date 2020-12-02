@@ -3,6 +3,7 @@
 using namespace std;
 
 void invertir(Pila<char>& P, char a, char b);
+
 int main(){
     Pila<char> P;
     string cadena = {'9','8','7','6','5','4','3','2','1'};
@@ -24,7 +25,7 @@ int main(){
 void invertir(Pila<char>& P, char a, char b){
     Pila <char> aux1, aux2; //uso aux1 para guardar los datos de la pila y aux2 para invertir el intervalo a-b
     bool booleano=true;
-    while (!P.vacia()){
+    while (!P.vacia()){ //mientras la pila no esté vacía
         if(P.tope() != a){
             aux1.push(P.tope());
             P.pop();
@@ -46,5 +47,4 @@ void invertir(Pila<char>& P, char a, char b){
         P.push(aux1.tope());
         aux1.pop();
     }
-    
 }

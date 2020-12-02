@@ -1,12 +1,12 @@
 #include <iostream>
 #include "pilaEnla.h"
-#include<fstream>
-#include<string>
+#include <fstream>
+#include <string>
 using namespace std;
 
 fstream& operator >>(fstream& fe, Pila<int>& P); //flujo entrada
 fstream& operator <<(fstream& fs, Pila<int>& P); //flujo salida
-void pila_final(const Pila<int>& P,const Pila<int>& Q, Pila<int>& R);
+void pila_final(Pila<int>& P, Pila<int>& Q, Pila<int>& R);
 
 int main(){
     fstream fich("fichero4.txt");
@@ -34,13 +34,13 @@ fstream& operator <<(fstream& fs, Pila<int>& P){
 }
 
 
-void pila_final(const Pila<int>& P, const Pila<int>& Q, Pila<int>& R){
+void pila_final(Pila<int>& P, Pila<int>& Q, Pila<int>& R){
     int acarreo = 0;
     while(!P.vacia() && !Q.vacia()){ //mientras ambas pilas sigan llenas
         if((P.tope() + Q.tope() + acarreo) >= 10){ //si el numero a hacer push >=10 me llevo una
             R.push(P.tope() + Q.tope() + acarreo - 10);
             acarreo = 1;
-        }else{ //sino se hace push de la suma
+        }else{ //si no se hace push de la suma
             R.push(P.tope() + Q.tope() + acarreo);
             acarreo = 0;
         }

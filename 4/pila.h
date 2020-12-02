@@ -20,7 +20,6 @@ private:
 
 };
 
-
 template <typename tElemento>
 inline Pila<tElemento>::Pila(unsigned TamaMax):
     elementos(new tElemento[TamaMax]),
