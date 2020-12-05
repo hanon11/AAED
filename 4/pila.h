@@ -32,7 +32,7 @@ template <typename tElemento>
 Pila<tElemento>::Pila(const Pila<tElemento>& p):
     elementos(new tElemento[p.Lmax]),
     Lmax(p.Lmax),
-    tope_(p.tope)
+    tope_(p.tope_)
 {
     for(int i = 0; i <= tope_; i++){
         elementos[i] = p.elementos[i];
@@ -79,6 +79,7 @@ inline void Pila<tElemento>::pop(){
 
 template <typename tElemento>
 inline void Pila<tElemento>::push(const tElemento& x){
+    assert(!llena());
     ++tope_;
     elementos[tope_] = x;
 }
