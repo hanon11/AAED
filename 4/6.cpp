@@ -67,8 +67,6 @@ bool solitario(tCarta* baraja, figura* base){
             descartes.pop();
         }
 
-        if(mazo.vacia() && descartes.vacia()) return true;
-
     }while(colocadas > 0 && !mazo.vacia());
     return (mazo.vacia());
 }
