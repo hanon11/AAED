@@ -1,5 +1,5 @@
 #include <iostream>
-#include "miPolinom.h"
+#include "polinom.h"
 #include "operaciones.h"
 using namespace std;
 

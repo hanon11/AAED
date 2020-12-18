@@ -1,4 +1,4 @@
-#include "miPolinom.h"
+#include "polinom.h"
 polinomio::polinomio(unsigned gradoMax){
     vector = new double[gradoMax];
     for(int i = 0; i <= gradoMax; i++){

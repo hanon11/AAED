@@ -1,6 +1,6 @@
 #ifndef OPERACIONES
 #define OPERACIONES
-#include "miPolinom.h"
+#include "polinom.h"
 #include <iostream>
 using namespace std;
 
