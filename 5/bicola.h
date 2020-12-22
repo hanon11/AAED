@@ -11,6 +11,8 @@ public:
     const T& final() const;
     void popfrente();
     void pushfrente(const T& x);
+    void popfinal();
+    void pushfinal(const T& x);
     ~Bicola();
 private:
     struct nodo {
@@ -19,8 +21,7 @@ private:
         nodo(const T& x, nodo* p = 0)
             : elem(x)
             , sig(p)
-        {
-        }
+        {}
     };
     nodo* fin;
     void copiar(const Bicola<T>& C);
@@ -57,6 +58,12 @@ const T& Bicola<T>::frente()const{
 }
 
 template<typename T>
+const T& Bicola<T>::final()const{
+    assert(!vacia());
+    return(fin->elem);
+}
+
+template<typename T>
 void Bicola<T>::popfrente(){
     assert(!vacia());
     nodo *p = fin->sig;
@@ -77,6 +84,37 @@ void Bicola<T>::pushfrente(const T& x){
     }else{
         p->sig = fin->sig;
         fin->sig = p;
+    }
+}
+
+
+template<typename T>
+void Bicola<T>::popfinal(){
+    assert(!vacia());
+    nodo *p = fin->sig;
+    if(p == fin){
+        delete p;
+        fin = fin->sig = 0;
+    }else{
+        p = fin->sig;
+        while(p->sig != fin){
+            p = p->sig;
+        }
+        p->sig = fin->sig;
+        delete fin;
+        fin = p;
+    }
+}
+
+template<typename T>
+void Bicola<T>::pushfinal(const T& x){
+    nodo *p = new nodo(x);
+    if(fin == 0){
+        fin = p->sig = p;
+    }else{
+        p->sig = fin->sig;
+        fin->sig = p;
+        fin = p;
     }
 }
 
