@@ -22,12 +22,11 @@ private:
 
 template<typename T>
 inline Cola_circular<T>::Cola_circular(unsigned Tam):
-     elementos(new T[Tam+1]),
-     Lmax(Tam+1),
-     inicio(0),
-     fin(Tam)
-{
-}
+    elementos(new T[Tam+1]),
+    Lmax(Tam+1),
+    inicio(0),
+    fin(Tam)
+{}
 
 template<typename T>
 inline Cola_circular<T>::Cola_circular(const Cola_circular<T> &C):
