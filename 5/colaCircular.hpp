@@ -7,7 +7,7 @@ class Cola_circular{
 public:
     Cola_circular(unsigned Tam);
     Cola_circular(const Cola_circular<T>& C);
-    Cola_circular<T>& operator = (const Cola_circular<T>& C);
+    Cola_circular<T>& operator =(const Cola_circular<T>& C);
     bool vacia()const;
     bool llena()const;
     const T& frente() const;

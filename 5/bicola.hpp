@@ -38,11 +38,11 @@ void Bicola<T>::copiar(const Bicola<T>& B){
     fin = new nodo(B.fin->elto);
     nodo * q = B.fin->sig;
     nodo * p = fin;
-    while(q!=B.fin)
+    while(q! = B.fin)
     {
-        p->sig=new nodo(q->elto);
-        p=p->sig;
-        q=q->sig;
+        p->sig = new nodo(q->elto);
+        p = p->sig;
+        q = q->sig;
     }
 }
 
