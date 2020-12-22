@@ -6,6 +6,7 @@
 
 template<typename T>
 void invertir(Cola<T>& COLA,T a,T b){
+    bool centinela = true;
     if(!COLA.vacia()){
         Cola<T> aux;
         Pila<T> pila;
@@ -15,7 +16,9 @@ void invertir(Cola<T>& COLA,T a,T b){
             COLA.pop();
         }
         
-        while(!COLA.vacia() && COLA.frente() != b){
+        while(!COLA.vacia() && centinela){
+            if(COLA.frente() == b)
+                centinela = false;
             pila.push(COLA.frente());
             COLA.pop();
         }
