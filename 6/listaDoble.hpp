@@ -122,9 +122,8 @@ lista_doble<T>::~lista_doble(){
     while(L->sig != L){
         q = q->sig;
         L->sig = q->sig;
-        delete q
+        delete q;
     }
-    delete L;
 }
 
 #endif
