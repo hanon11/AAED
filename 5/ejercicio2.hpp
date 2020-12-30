@@ -2,7 +2,7 @@
 #define _EJERCICIO2_HPP
 
 #include "colaDina.h"
-#include "pilaEnla.h"
+#include "../4/pilaEnla.h"
 
 template<typename T>
 void invertir(Cola<T>& COLA,T a,T b){

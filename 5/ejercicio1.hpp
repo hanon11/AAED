@@ -1,5 +1,5 @@
 #include "colaDina.h"
-#include "pila.h"
+#include "../4/pila.h"
 
 template<typename T>
 bool isomorfos(const Pila<T>& pila, const Cola<T>& cola){
