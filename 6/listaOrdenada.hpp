@@ -44,9 +44,8 @@ listaOrdenada<T>::listaOrdenada(const listaOrdenada<T>& l):lista(l){}
 
 template<typename T>
 listaOrdenada<T>& listaOrdenada<T>::operator =(const listaOrdenada<T>& l){
-    if(this!=&l)
-    {
-        lista=l;
+    if(this != &l){
+        lista = l;
     }
     return *this;
 } 
