@@ -32,11 +32,14 @@ void tren::desDcha(){
         izq.pop();
     }
 }
+
 void tren::desIzq(){
-    if(!drcha.vacia()){
-        izq.push(drcha.tope());
-        drcha.pop();
-    }
+    vagon aux = drcha.tope();
+    drcha.pop();
+    if(drcha.vacia()){
+        drcha.push(aux);
+    }else{
+        izq.push(aux);
 }
 
 void tren::eliminar(){
