@@ -6,32 +6,18 @@
 class tren
 {
 private:
-    Pila<vagon> izq, drcha;
+    Pila<vagon> izq, drcha; //supongo robot en la cima de la pila drch
 public:
     tren(); //constructor
-    void desIzq();
-    void desDcha();
-    void eliminar();
-    const vagon observarAct() const;
-    bool vacío();
+    void desIzq(); //si drch no está vacía, pasa el vagon a la izq, sino no hace nada
+    void desDcha(); //si izq no está vacía, pasa el vagon a la drch, sino no hace nada
+    void eliminar(); //eliminar vagon activo
+    const vagon observarAct() const; //devuelve vagón activo
+    bool vacío(); //devuelve si el tren está o no vacío
     ~tren(); //destructor
 };
 
 tren::tren() {}
-
-void tren::desIzq(){
-    if(!drcha.vacia()){
-        izq.push(drcha.tope());
-        drcha.pop();
-    }
-}
-
-void tren::desDcha(){
-    if(!izq.vacia()){
-        drcha.push(izq.tope());
-        izq.pop();
-    }
-}
 
 void tren::desIzq(){
     vagon aux = drcha.tope();
@@ -40,6 +26,13 @@ void tren::desIzq(){
         drcha.push(aux);
     }else{
         izq.push(aux);
+}
+
+void tren::desDcha(){
+    if(!izq.vacia()){
+        drcha.push(izq.tope());
+        izq.pop();
+    }
 }
 
 void tren::eliminar(){
