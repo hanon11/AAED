@@ -27,8 +27,7 @@ private:
         nodo(const T& e, nodo* p = 0)
             : elto(e)
             , sig(p)
-        {
-        }
+        {}
     };
     nodo* L; // lista enlazada de nodos
     void copiar(const listaEnla<T>& l);
@@ -87,8 +86,7 @@ inline T& listaEnla<T>::elemento(listaEnla<T>::posicion p){
 }
 
 template <typename T>
-typename listaEnla<T>::posicion
-listaEnla<T>::buscar(const T& x) const{
+typename listaEnla<T>::posicion listaEnla<T>::buscar(const T& x) const{
     nodo* q = L;
     bool encontrado = false;
     while (q->sig && !encontrado)
@@ -109,8 +107,7 @@ template <typename T>
 typename listaEnla<T>::posicion listaEnla<T>::anterior(listaEnla<T>::posicion p) const {
     nodo* q;
     assert(p != L); // p no es la primera posición
-    for (q = L; q->sig != p; q = q->sig)
-        ;
+    for (q = L; q->sig != p; q = q->sig);
     return q;
 }
 
@@ -122,12 +119,11 @@ inline typename listaEnla<T>::posicion listaEnla<T>::primera() const{
 template <typename T>
 typename listaEnla<T>::posicion listaEnla<T>::fin() const{
     nodo* p;
-    for (p = L; p->sig; p = p->sig)
-        ;
+    for (p = L; p->sig; p = p->sig);
     return p;
 }
 
-// Destructor: destruye el nodo cabecera y vacía la listaEnla
+// Destructor: destruye el nodo cabecera y vacía la lista
 template <typename T>
 listaEnla<T>::~listaEnla(){
     nodo* q;
