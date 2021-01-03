@@ -15,9 +15,9 @@ public:
     símbolo(); //constructor
     void añadirTrazo(trazo t); //añadir un trazo a la pila de trazos
     void deshacerTrazo(int nTrazos); //deshacer n trazos de la pila
-    símbolo& simX(); //
-    símbolo& simY(); //
-    símbolo& simXY(); //
+    símbolo& simX(); //simetria respecto a X
+    símbolo& simY(); //simetria respecto a Y
+    símbolo& simXY(); //simetria respecto a XY
     ~símbolo();
 };
 
