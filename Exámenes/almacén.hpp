@@ -10,9 +10,8 @@ Se pide diseñar un TAD para el funcionamiento del robot que incluya las siguien
     5. Vaciar el almacén (destructor del TAD).
 */
 
-
 #ifndef _ALMACEN_HPP_
-#define _ALMACEN_HPP
+#define _ALMACEN_HPP_
 #include "../6/listaDoble.hpp"
 #include "../5/colaDina.h"
 #include <cassert>
@@ -146,4 +145,4 @@ almacen::~almacen(){
     alm.~lista_doble();
 }
 
-#endif
+#endif // ALMACEN_HPP_
