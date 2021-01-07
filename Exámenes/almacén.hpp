@@ -136,6 +136,7 @@ objeto almacen::sacar(int x){
         if(x == alm.elemento(p).balda.frente().idObjeto){
             alm.elemento(p).balda.pop();
             alm.elemento(p).nElementos--;
+            centinela = false;
         }
         p = alm.siguiente(p);
     }
