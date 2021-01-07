@@ -130,16 +130,19 @@ bool almacen::comprobar(int x){
 
 objeto almacen::sacar(int x){
     lista_doble<estante>::posicion p = alm.primera();
+    objeto aux;
     int contador = 0;
     bool centinela = true;
     while(contador < 60 && centinela){
         if(x == alm.elemento(p).balda.frente().idObjeto){
+            aux = alm.elemento(p).balda.frente();
             alm.elemento(p).balda.pop();
             alm.elemento(p).nElementos--;
             centinela = false;
         }
         p = alm.siguiente(p);
     }
+    return aux;
 }
 
 almacen::~almacen(){
