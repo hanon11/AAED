@@ -35,7 +35,12 @@ inline bool cocina::esColocable(double anch,double p){
         while(pos != muebles.fin() && muebles.elemento(pos).posicion < p){
             pos = muebles.siguiente(pos);
         }
+        if(muebles.fin() == pos){
+            if(muebles.elemento(muebles.anterior(pos)).posicion + muebles.elemento(muebles.anterior(pos)).anchura + )
+        }
+
     }else{
+        
 
     }
 }
@@ -44,7 +49,7 @@ void cocina::colocar(double anch, double p){
     assert(esColocable(anch,p));
     lista_doble<mueble>::posicion pos = muebles.primera();
 
-    while(pos != muebles.fin() && muebles.elemento(pos).posicion <p)
+    while(pos != muebles.fin() && muebles.elemento(pos).posicion < p)
         pos = muebles.siguiente(pos);
     muebles.insertar(mueble(anch,p), pos);
     nMuebles++;
