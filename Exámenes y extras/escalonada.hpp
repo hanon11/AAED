@@ -16,9 +16,9 @@ public:
     escalonada(double x, double y);
     void add(double x, double y);
     void del(double x);
-    const double value(double x);
-    const double min();
-    const double max();
+    double value(double x);
+    double min();
+    double max();
     void move(double w, double z);
     ~escalonada();
 };
@@ -56,7 +56,7 @@ void escalonada::del(double x){
     function.eliminar(p);
 }
 
-const double escalonada::value(double x){
+double escalonada::value(double x){
     listaEnla<escalon>::posicion p = function.primera();
     while (p != function.fin() && function.elemento(p).x != x)
     {
@@ -67,7 +67,7 @@ const double escalonada::value(double x){
 }
 
 
-const double escalonada::max(){
+double escalonada::max(){
     listaEnla<escalon>::posicion p = function.primera();
     double max;
     max = function.elemento(p).y;
@@ -83,7 +83,7 @@ const double escalonada::max(){
 }
 
 
-const double escalonada::min(){
+double escalonada::min(){
     listaEnla<escalon>::posicion p = function.primera();
     double min;
     min = function.elemento(p).y;
